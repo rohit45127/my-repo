@@ -1,13 +1,10 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /home/ubuntu/app/
-  - source: /dockerfile
-    destination: /home/ubuntu/app/
+  - source: /
+    destination: /var/www/html/WordPress
 hooks:
-    AfterInstall:
+  BeforeInstall:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: root
- 
